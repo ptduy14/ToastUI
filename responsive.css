@@ -1,0 +1,18 @@
+@media (max-width: 739px){
+    #btn{
+        flex-direction: column;
+    }
+    .btn{
+        text-align: center;
+    }
+    .btn + .btn{
+        margin-left: unset;
+        margin-top: 10px;
+    }
+    #toast{
+        right: 0;
+    }
+    .toast{
+        min-width: 350px;
+    }
+}

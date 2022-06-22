@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(245, 245, 245);
+    font-family:Arial, Helvetica, sans-serif;
+}
+#toast{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999999;
+}
+.toast{
+    min-width: 400px;
+    padding: 24px 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border-left: 4px solid black;  
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all ease 0.5s;
+    animation: slideIn ease 0.5s, slideOut ease 0.5s 3s forwards;
+}
+@keyframes slideIn{
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideOut{
+    to {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+}
+.toast + .toast{
+    margin-top: 20px;
+}
+.toast .toast__icon{
+    font-size: 24px;
+}
+.toast .toast__body{
+    flex-grow: 1;
+}
+.toast .toast__body .toast__title{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.toast .toast__close{
+    font-size: 20px;
+    color: grey;
+    opacity: 0.8;
+}
+.toast .toast__icon,
+.toast .toast__close{
+    padding: 0 14px;
+}
+
+/* toast modifier */
+
+.toast--info{
+    border-left: 4px solid #3086eb;
+}
+.toast--success{
+    border-left: 4px solid #47d763;
+}
+.toast--error{
+    border-left: 4px solid #ff5555;
+}
+
+.toast--info .toast__icon{
+    color:#3086eb ;
+} 
+.toast--success .toast__icon{
+    color: #47d763;
+}
+.toast--error .toast__icon{
+    color: #ff5555;
+}
+
+/* ======== button css ======== */
+
+#btn{
+    display: flex;
+}
+.btn{
+    padding: 15px 36px;
+    border-radius: 50px;
+    color: white;
+}
+.btn + .btn{
+    margin-left: 20px;
+}
+.btn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.btn--info{
+    background-color: #3086eb;
+}
+.btn--success{
+    background-color: #47d763;
+}
+.btn--error{
+    background-color:#ff5555;
+}
